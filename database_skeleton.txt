@@ -1,0 +1,21 @@
+-- Adminer 4.6.2 MySQL dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+DROP TABLE IF EXISTS `email_data`;
+CREATE TABLE `email_data` (
+  `email_id` int(11) NOT NULL AUTO_INCREMENT,
+  `email_subject` text NOT NULL,
+  `email_body` text NOT NULL,
+  `email_address` varchar(150) NOT NULL,
+  `email_track_code` varchar(100) NOT NULL,
+  `email_status` enum('no','yes') NOT NULL,
+  `email_open_datetime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`email_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- 2018-10-31 19:16:40
